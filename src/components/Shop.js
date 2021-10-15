@@ -7,29 +7,45 @@ import pepe6 from "../assets/pepe6.jpg";
 
 const Shop = () => {
   return (
-    <div id="shop">
+    <div
+      id="shop"
+      onMouseOver={(e) => {
+        if (e.target.parentElement.id === "pepe-item")
+          e.target.parentElement.querySelector("h1").style.opacity = 0.9;
+        else
+          e.target.parentElement
+            .querySelectorAll("#pepe-item > h1")
+            .forEach((pepe) => (pepe.style.opacity = 0));
+      }}
+    >
       <ul id="shop-list">
         <li id="pepe-item">
+          <h1 id="buy-pepe">+</h1>
           <img src={pepe1} alt="pepe1" />
           <p>1.99$</p>
         </li>
         <li id="pepe-item">
+          <h1 id="buy-pepe">+</h1>
           <img src={pepe2} alt="pepe1" />
           <p>3.99$</p>
         </li>
         <li id="pepe-item">
+          <h1 id="buy-pepe">+</h1>
           <img src={pepe3} alt="pepe1" />
           <p>2.99$</p>
         </li>
         <li id="pepe-item">
+          <h1 id="buy-pepe">+</h1>
           <img src={pepe4} alt="pepe1" />
           <p>9.99$</p>
         </li>
         <li id="pepe-item">
+          <h1 id="buy-pepe">+</h1>
           <img src={pepe5} alt="pepe1" />
           <p>11.49$</p>
         </li>
         <li id="pepe-item">
+          <h1 id="buy-pepe">+</h1>
           <img src={pepe6} alt="pepe1" />
           <p>4.20$</p>
         </li>
