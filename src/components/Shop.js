@@ -1,3 +1,4 @@
+import { useState } from "react";
 import pepe1 from "../assets/pepe1.jpg";
 import pepe2 from "../assets/pepe2.jpg";
 import pepe3 from "../assets/pepe3.jpg";
@@ -6,18 +7,33 @@ import pepe5 from "../assets/pepe5.png";
 import pepe6 from "../assets/pepe6.jpg";
 
 const Shop = () => {
+  const [basketCount, setbasketCount] = useState(1);
+
+  const handleHover = (e) => {
+    if (e.target.parentElement.id === "pepe-item")
+      e.target.parentElement.querySelector("h1").style.opacity = 0.9;
+    else
+      e.target.parentElement
+        .querySelectorAll("#pepe-item > h1")
+        .forEach((pepe) => (pepe.style.opacity = 0));
+  };
+
+  const handleClick = (e) => {
+    let basket = document.getElementById("item-count").textContent;
+
+    if (e.target.parentElement.id === "pepe-item") {
+      if (basket > basketCount) {
+        setbasketCount(Number(basket) + 1);
+        basket = Number(basket) + 1;
+      } else {
+        setbasketCount(basketCount + 1);
+        basket = basketCount;
+      }
+    }
+  };
+
   return (
-    <div
-      id="shop"
-      onMouseOver={(e) => {
-        if (e.target.parentElement.id === "pepe-item")
-          e.target.parentElement.querySelector("h1").style.opacity = 0.9;
-        else
-          e.target.parentElement
-            .querySelectorAll("#pepe-item > h1")
-            .forEach((pepe) => (pepe.style.opacity = 0));
-      }}
-    >
+    <div id="shop" onMouseOver={handleHover} onClick={handleClick}>
       <ul id="shop-list">
         <li id="pepe-item">
           <h1 id="buy-pepe">+</h1>

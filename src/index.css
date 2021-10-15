@@ -16,7 +16,7 @@ ul {
 /* Nav */
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 14px;
 }
@@ -90,6 +90,21 @@ img {
   opacity: 0;
   transition-duration: 200ms;
   transition-timing-function: linear;
+}
+#basket {
+  background: url(./assets/basket.png);
+  height: 41px;
+  width: 41px;
+  color: green;
+  background-size: cover;
+}
+#item-count {
+  background: green;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  transform: translateX(14px);
+  width: 20px;
 }
 
 /* About */

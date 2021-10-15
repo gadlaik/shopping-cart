@@ -21,7 +21,9 @@ const Nav = () => {
               <Link to="/about">About</Link>
             </li>
           </ul>
-          <br />
+          <div id="basket">
+            <div id="item-count"></div>
+          </div>
         </nav>
         <Switch>
           <Route exact path="/" component={Home} />
