@@ -39,7 +39,7 @@ const App = () => {
           </div>
         </nav>
         <Switch>
-          <Route exact path="/">
+          <Route exact path={["/", "/shopping-cart"]}>
             <div id="home-page"></div>
           </Route>
           <Route exact path="/shop">
