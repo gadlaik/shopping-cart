@@ -6,57 +6,77 @@ import pepe5 from "../assets/pepe5.png";
 import pepe6 from "../assets/pepe6.jpg";
 
 const Shop = () => {
-  const prices = { pepe1: 9.99 };
+  const prices = {
+    pepe1: 9.99,
+    pepe2: 29.99,
+    pepe3: 3.99,
+    pepe4: 18.99,
+    pepe5: 44.99,
+    pepe6: 7.99,
+  };
+
+  function handleBuyClick(e) {
+    e.target.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      e.target.style.transform = "scale(1)";
+    }, 200);
+  }
 
   return (
     <ul id="shop-list">
       <li id="shop-item">
         <img src={pepe1} alt="pepe1" />
         <div id="price">
-          Quantity
-          <input type="number" value={1} />
-          <p>{"$" + prices.pepe1}</p>
+          <p>Quantity</p>
+          <input type="number" />
+          <h3 onClick={handleBuyClick}>Buy</h3>
         </div>
+        <p>{"$" + prices.pepe1}</p>
       </li>
       <li id="shop-item">
         <img src={pepe2} alt="pepe2" />
         <div id="price">
-          Quantity
-          <input type="number" value={1} />
-          <p>{"$" + prices.pepe2}</p>
+          <p>Quantity</p>
+          <input type="number" />
+          <h3 onClick={handleBuyClick}>Buy</h3>
         </div>
+        <p>{"$" + prices.pepe2}</p>
       </li>
       <li id="shop-item">
         <img src={pepe3} alt="pepe3" />
         <div id="price">
-          Quantity
-          <input type="number" value={1} />
-          <p>{"$" + prices.pepe3}</p>
+          <p>Quantity</p>
+          <input type="number" />
+          <h3 onClick={handleBuyClick}>Buy</h3>
         </div>
+        <p>{"$" + prices.pepe3}</p>
       </li>
       <li id="shop-item">
         <img src={pepe4} alt="pepe4" />
         <div id="price">
-          Quantity
-          <input type="number" value={1} />
-          <p>{"$" + prices.pepe4}</p>
+          <p>Quantity</p>
+          <input type="number" />
+          <h3 onClick={handleBuyClick}>Buy</h3>
         </div>
+        <p>{"$" + prices.pepe4}</p>
       </li>
       <li id="shop-item">
         <img src={pepe5} alt="pepe5" />
         <div id="price">
-          Quantity
-          <input type="number" value={1} />
-          <p>{"$" + prices.pepe5}</p>
+          <p>Quantity</p>
+          <input type="number" />
+          <h3 onClick={handleBuyClick}>Buy</h3>
         </div>
+        <p>{"$" + prices.pepe5}</p>
       </li>
       <li id="shop-item">
         <img src={pepe6} alt="pepe6" />
         <div id="price">
-          Quantity
-          <input type="number" value={1} />
-          <p>{"$" + prices.pepe6}</p>
+          <p>Quantity</p>
+          <input type="number" />
+          <h3 onClick={handleBuyClick}>Buy</h3>
         </div>
+        <p>{"$" + prices.pepe6}</p>
       </li>
     </ul>
   );

@@ -23,7 +23,7 @@ const App = () => {
           </ul>
           <div id="basket">
             <img src={basket} alt="basket" />
-            <div id="item-count">2</div>
+            <div id="item-count">0</div>
           </div>
         </nav>
         <Switch>

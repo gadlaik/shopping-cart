@@ -9,6 +9,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  user-select: none;
 }
 
 /* nav */
@@ -70,14 +71,49 @@ body {
 
 /* Shop */
 #shop-list {
-  margin-top: 80px;
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
   text-align: center;
   list-style: none;
+  width: 55%;
+  margin: auto;
+  margin-top: 80px;
+  gap: 30px 10px;
 }
 #shop-list > li > img {
   width: 200px;
+  height: 200px;
+  box-shadow: 0px 0px 20px lime;
+}
+#price {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0px;
+}
+#price > p {
+  margin-right: 5px;
+  transform: translateY(4px);
+}
+#price > input {
+  width: 46px;
+  text-align: center;
+  font-size: 16px;
+  padding: 2px 0px;
+  outline: none;
+}
+#price > h3 {
+  background-color: limegreen;
+  padding: 4px 6px;
+  border-radius: 3px;
+  opacity: 0.7;
+  box-shadow: 0px 0px 3px gray;
+  text-shadow: 0px 0px 5px white;
+  transition-duration: 300ms;
+}
+#price > h3:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }
 
 /* About */
@@ -92,4 +128,5 @@ body {
   padding: 15px 10px;
   font-size: 18px;
   border-radius: 2px;
+  user-select: text;
 }
