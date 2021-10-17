@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import basket from "./assets/basket.png";
-import Home from "./components/Home";
 import Shop from "./components/Shop";
 import About from "./components/About";
 
@@ -20,7 +19,7 @@ const App = () => {
   }
   return (
     <Router>
-      <div id="container">
+      <div>
         <nav id="nav-bar">
           <h1 id="logo">Pepe Shop</h1>
           <ul id="nav-list">
@@ -40,7 +39,9 @@ const App = () => {
           </div>
         </nav>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/">
+            <div id="home-page"></div>
+          </Route>
           <Route exact path="/shop">
             <Shop handleBuyClick={handleBuyClick} />
           </Route>
