@@ -5,7 +5,7 @@ import pepe4 from "../assets/pepe4.jpg";
 import pepe5 from "../assets/pepe5.png";
 import pepe6 from "../assets/pepe6.jpg";
 
-const Shop = () => {
+const Shop = ({ handleBuyClick }) => {
   const prices = {
     pepe1: 9.99,
     pepe2: 29.99,
@@ -14,13 +14,6 @@ const Shop = () => {
     pepe5: 44.99,
     pepe6: 7.99,
   };
-
-  function handleBuyClick(e) {
-    e.target.style.transform = "scale(0.95)";
-    setTimeout(() => {
-      e.target.style.transform = "scale(1)";
-    }, 200);
-  }
 
   return (
     <ul id="shop-list">

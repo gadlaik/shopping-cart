@@ -1,10 +1,23 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useState } from "react";
 import basket from "./assets/basket.png";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import About from "./components/About";
 
 const App = () => {
+  const [basketCount, setbasketCount] = useState(0);
+
+  function handleBuyClick(e) {
+    let quantity = Number(e.target.parentElement.children[1].value);
+
+    e.target.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      e.target.style.transform = "scale(1)";
+    }, 200);
+
+    setbasketCount(basketCount + quantity);
+  }
   return (
     <Router>
       <div id="container">
@@ -23,12 +36,14 @@ const App = () => {
           </ul>
           <div id="basket">
             <img src={basket} alt="basket" />
-            <div id="item-count">0</div>
+            <div id="item-count">{basketCount}</div>
           </div>
         </nav>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/shop" component={Shop} />
+          <Route exact path="/shop">
+            <Shop handleBuyClick={handleBuyClick} />
+          </Route>
           <Route exact path="/about" component={About} />
         </Switch>
       </div>
